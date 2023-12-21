@@ -16,6 +16,11 @@ a {
 	background-color: rgb(141, 82, 23);
 }
 
+.my-btn {
+	background-color: rgba(188, 197, 199, 0.742);
+	color: black;
+}
+
 button.brown:hover {
 	background-color: rgba(31, 113, 31, 0.626);
 }
@@ -45,9 +50,9 @@ button.brown:hover {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.comment-section {
+/* .comment-section {
 	max-height: 150px;
 	overflow-y: auto;
 	margin: 10px 0;
 	padding: 5px;
-}
+} */

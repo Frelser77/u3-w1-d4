@@ -4,7 +4,7 @@ import { AUTH_TOKEN, API_URL } from "./CommentArea";
 class AddComment extends Component {
 	state = {
 		comment: "",
-		rate: [],
+		rate: "",
 	};
 
 	handleInputChange = (event) => {
@@ -51,8 +51,15 @@ class AddComment extends Component {
 		return (
 			<Form onSubmit={this.submitComment}>
 				<Form.Group>
-					<Form.Label>Comment</Form.Label>
-					<Form.Control as="textarea" rows={3} value={this.state.comment} onChange={this.handleInputChange} required />
+					<Form.Label htmlFor="textarea">Comment</Form.Label>
+					<Form.Control
+						id="textarea"
+						as="textarea"
+						rows={3}
+						value={this.state.comment}
+						onChange={this.handleInputChange}
+						required
+					/>
 				</Form.Group>
 				<Form.Group>
 					<Form.Label htmlFor="rateSelect">Rate</Form.Label>

@@ -82,7 +82,10 @@ const CommentsList = ({ comments, onDelete }) => (
 	<ListGroup>
 		<h5>Comments</h5>
 		{comments.map((comment) => (
-			<ListGroup.Item className="d-flex " key={comment.elementId + comment.comment + comment.rate}>
+			<ListGroup.Item
+				className="d-flex align-items-center justify-content-between"
+				key={comment.elementId + comment.comment + comment.rate}
+			>
 				<div className="ms-2 me-auto">
 					<div className="fw-bold d-inline-block text-start">{comment.comment}</div>
 					<div className="fw-bold d-inline-block text-start">

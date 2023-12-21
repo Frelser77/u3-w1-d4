@@ -46,7 +46,7 @@ class BookList extends Component {
 		return (
 			<Container>
 				<h2 className="mb-3">Best Seller</h2>
-				<Form className="mb-3" onSubmit={(event) => event.preventDefault()}>
+				<Form className="my-3" onSubmit={(event) => event.preventDefault()}>
 					<FormControl
 						id="searchBook"
 						name="searchTerm"
@@ -56,7 +56,7 @@ class BookList extends Component {
 						onChange={(event) => this.handleChange(event)}
 					/>
 				</Form>
-				<Row xs={1} md={2} lg={5} className="g-4">
+				<Row xs={1} md={2} lg={5} className="g-4 my-4">
 					{displayedBooks.map((book) => (
 						<SingleBook key={book.asin + book.category} book={book} />
 					))}

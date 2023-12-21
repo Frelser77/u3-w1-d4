@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Col } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
@@ -18,12 +18,12 @@ class SingleBook extends Component {
 		const { selected } = this.state;
 
 		return (
-			<>
+			<Row className="text-align-start">
 				<Col xs="auto">
 					<Card
-						className="h-100 pointer"
+						className="pointer"
 						onClick={this.handleClick}
-						style={{ borderColor: selected ? "red" : "transparent" }}
+						style={{ borderColor: selected ? "green" : "transparent", borderWidth: selected ? "1.5px" : "0px" }}
 					>
 						<Card.Img
 							className="img-fluid"
@@ -32,7 +32,7 @@ class SingleBook extends Component {
 							alt={`Copertina di ${book.title}`}
 							style={{ height: "200px", objectFit: "cover" }}
 						/>
-						<Card.Body className="brownCard rounded-bottom border-top border-black">
+						<Card.Body className="brownCard rounded-bottom border-top border-black ">
 							<Card.Title className="card-title">{book.title}</Card.Title>
 							<Card.Text className="card-price">
 								Prezzo: <span className="badge bg-success">€{book.price}</span>
@@ -40,8 +40,8 @@ class SingleBook extends Component {
 						</Card.Body>
 					</Card>
 				</Col>
-				{selected && <CommentArea book={book} />}
-			</>
+				<Col>{selected && <CommentArea book={book} />}</Col>
+			</Row>
 		);
 	}
 }
