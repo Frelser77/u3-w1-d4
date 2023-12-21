@@ -5,7 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function navBar() {
 	return (
-		<Navbar expand="lg" variant="black" className="brown">
+		<Navbar expand="lg" variant="black" className="brown sticky-top">
 			<Container>
 				<Navbar.Brand href="index.html">
 					<img src="assets/imgs/logo3.png" alt="logo" style={{ width: "120px", height: "75px" }} />

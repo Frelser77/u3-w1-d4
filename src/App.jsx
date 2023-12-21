@@ -13,9 +13,7 @@ class App extends Component {
 			<div className="App">
 				<NavBar />
 				<Welcome />
-
 				<BookList />
-
 				<AllBooks />
 				<MyFooter />
 			</div>
