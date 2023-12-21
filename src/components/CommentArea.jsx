@@ -15,10 +15,6 @@ class CommentArea extends Component {
 		error: null,
 	};
 
-	componentDidMount() {
-		this.fetchComments();
-	}
-
 	fetchComments = async () => {
 		this.setState({ isLoading: true, error: null });
 		try {
@@ -42,6 +38,10 @@ class CommentArea extends Component {
 	handleCommentAdded = () => {
 		this.fetchComments();
 	};
+
+	componentDidMount() {
+		this.fetchComments();
+	}
 
 	deleteComment = async (commentId) => {
 		try {
@@ -70,7 +70,7 @@ class CommentArea extends Component {
 			return <Error message={error} />;
 		}
 		return (
-			<Col variant="auto">
+			<Col>
 				<CommentsList comments={comments} onDelete={this.deleteComment} className="comment-section" />
 				<AddComment book={this.props.book} onCommentAdded={this.fetchComments} />
 			</Col>
@@ -82,12 +82,13 @@ const CommentsList = ({ comments, onDelete }) => (
 	<ListGroup>
 		<h5>Comments</h5>
 		{comments.map((comment) => (
-			<ListGroup.Item
-				className="d-flex justify-content-between align-items-start"
-				key={comment.elementId + comment.comment + comment.rate}
-			>
+			<ListGroup.Item className="d-flex " key={comment.elementId + comment.comment + comment.rate}>
 				<div className="ms-2 me-auto">
-					<div className="fw-bold">{comment.comment}</div>
+					<div className="fw-bold d-inline-block text-start">{comment.comment}</div>
+					<div className="fw-bold d-inline-block text-start">
+						{comment.rate >= 3 ? "⭐" : "✰"}
+						{comment.rate}
+					</div>
 				</div>
 				<Button variant="outline-danger" size="sm" onClick={() => onDelete(comment._id)}>
 					Delete

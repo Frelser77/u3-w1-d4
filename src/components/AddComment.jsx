@@ -4,7 +4,7 @@ import { AUTH_TOKEN, API_URL } from "./CommentArea";
 class AddComment extends Component {
 	state = {
 		comment: "",
-		rate: "1",
+		rate: [],
 	};
 
 	handleInputChange = (event) => {
