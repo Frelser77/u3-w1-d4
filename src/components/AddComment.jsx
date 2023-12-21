@@ -55,8 +55,8 @@ class AddComment extends Component {
 					<Form.Control as="textarea" rows={3} value={this.state.comment} onChange={this.handleInputChange} required />
 				</Form.Group>
 				<Form.Group>
-					<Form.Label>Rate</Form.Label>
-					<Form.Control as="select" value={this.state.rate} onChange={this.handleRateChange} required>
+					<Form.Label htmlFor="rateSelect">Rate</Form.Label>
+					<Form.Control id="rateSelect" as="select" value={this.state.rate} onChange={this.handleRateChange} required>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>

@@ -80,7 +80,7 @@ class CommentArea extends Component {
 
 const CommentsList = ({ comments, onDelete }) => (
 	<ListGroup>
-		<h5>Commenti</h5>
+		<h5>Comments</h5>
 		{comments.map((comment) => (
 			<ListGroup.Item
 				className="d-flex justify-content-between align-items-start"
