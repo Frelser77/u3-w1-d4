@@ -19,6 +19,13 @@ a {
 .my-btn {
 	background-color: rgba(188, 197, 199, 0.742);
 	color: black;
+	transition: scale 0.3s ease-in-out;
+}
+
+.my-btn:hover {
+	background-color: rgba(141, 82, 23, 0.522);
+	color: white;
+	scale: 1.05;
 }
 
 button.brown:hover {
@@ -42,17 +49,12 @@ button.brown:hover {
 }
 
 .card {
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, scale 0.3s ease-in-out;
 }
 
 .card:hover {
 	transform: translateY(-5px);
+	scale: 1.1;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	z-index: 10;
 }
-
-/* .comment-section {
-	max-height: 150px;
-	overflow-y: auto;
-	margin: 10px 0;
-	padding: 5px;
-} */

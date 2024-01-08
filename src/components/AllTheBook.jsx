@@ -16,33 +16,37 @@ function AllBooks() {
 	});
 
 	const toggleSection = (section) => {
-		setShowSections((prevSections) => ({
-			...prevSections,
-			[section]: !prevSections[section],
-		}));
+		setShowSections({
+			fantasy: false,
+			history: false,
+			horror: false,
+			romance: false,
+			scifi: false,
+			[section]: true,
+		});
 	};
 
 	return (
 		<>
 			<div className="section-toggles">
 				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("fantasy")}>
-					Toggle Fantasy
+					Fantasy
 				</button>
 
 				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("history")}>
-					Toggle History
+					History
 				</button>
 
 				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("horror")}>
-					Toggle Horror
+					Horror
 				</button>
 
 				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("romance")}>
-					Toggle Romance
+					Romance
 				</button>
 
 				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("scifi")}>
-					Toggle Sci-Fi
+					Sci-Fi
 				</button>
 			</div>
 

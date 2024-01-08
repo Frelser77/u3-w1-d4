@@ -6,7 +6,7 @@ import Error from "./Error";
 
 export const API_URL = "https://striveschool-api.herokuapp.com/api/comments/";
 export const AUTH_TOKEN =
-	"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTg0MzQ5MWI1MjViYjAwMThlZDA3YzYiLCJpYXQiOjE3MDMxNjMwMjUsImV4cCI6MTcwNDM3MjYyNX0.8KYXVgiLWa2UamVdQ5gn1yJwvQ-IV14bxgNO-5wl5vc";
+	"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTcxYzJjMjBkOGEyMDAwMThhNDhhMmQiLCJpYXQiOjE3MDQ3MjA0ODQsImV4cCI6MTcwNTkzMDA4NH0.Vvao4K4ecGDgp8dk7wmXHHxGN9tXVrYOBz6hJqopsfc";
 
 class CommentArea extends Component {
 	state = {
@@ -15,7 +15,16 @@ class CommentArea extends Component {
 		error: null,
 	};
 
+	componentDidUpdate(prevProps) {
+		if (prevProps.book && this.props.book && prevProps.book.asin !== this.props.book.asin) {
+			this.fetchComments();
+		}
+	}
+
 	fetchComments = async () => {
+		if (!this.props.book) {
+			return;
+		}
 		this.setState({ isLoading: true, error: null });
 		try {
 			const response = await fetch(`${API_URL}${this.props.book.asin}`, {
@@ -40,7 +49,9 @@ class CommentArea extends Component {
 	};
 
 	componentDidMount() {
-		this.fetchComments();
+		if (this.props.book) {
+			this.fetchComments();
+		}
 	}
 
 	deleteComment = async (commentId) => {
@@ -79,11 +90,11 @@ class CommentArea extends Component {
 }
 
 const CommentsList = ({ comments, onDelete }) => (
-	<ListGroup>
-		<h5>Comments</h5>
+	<ListGroup className="gap-1">
+		<h5 className="fw-bold">Comments</h5>
 		{comments.map((comment) => (
 			<ListGroup.Item
-				className="d-flex align-items-center justify-content-between"
+				className="d-flex align-items-center justify-content-between rounded"
 				key={comment.elementId + comment.comment + comment.rate}
 			>
 				<div className="ms-2 me-auto">

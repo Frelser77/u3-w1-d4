@@ -8,14 +8,11 @@ class SingleBook extends Component {
 	};
 
 	handleClick = () => {
-		this.setState((prevState) => ({
-			selected: !prevState.selected,
-		}));
+		this.props.onSelect(this.props.book);
 	};
 
 	render() {
 		const { book } = this.props;
-		const { selected } = this.state;
 
 		return (
 			<Row className="text-align-start">
@@ -23,7 +20,10 @@ class SingleBook extends Component {
 					<Card
 						className="pointer"
 						onClick={this.handleClick}
-						style={{ borderColor: selected ? "green" : "transparent", borderWidth: selected ? "1.5px" : "0px" }}
+						style={{
+							borderColor: this.props.selected ? "green" : "transparent",
+							borderWidth: this.props.selected ? "1px" : "0px",
+						}}
 					>
 						<Card.Img
 							className="img-fluid"
@@ -40,7 +40,6 @@ class SingleBook extends Component {
 						</Card.Body>
 					</Card>
 				</Col>
-				<Col>{selected && <CommentArea book={book} />}</Col>
 			</Row>
 		);
 	}
