@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
 	state = {

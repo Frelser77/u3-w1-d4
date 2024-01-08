@@ -51,7 +51,7 @@ class AddComment extends Component {
 		return (
 			<Form onSubmit={this.submitComment}>
 				<Form.Group>
-					<Form.Label htmlFor="textarea" className=" fw-bold">
+					<Form.Label htmlFor="textarea" className=" fw-bold my-2">
 						Comment
 					</Form.Label>
 					<Form.Control
@@ -65,7 +65,7 @@ class AddComment extends Component {
 					/>
 				</Form.Group>
 				<Form.Group>
-					<Form.Label htmlFor="rateSelect" className=" fw-bold">
+					<Form.Label htmlFor="rateSelect" className=" fw-bold my-2">
 						Rate
 					</Form.Label>
 					<Form.Control
@@ -84,7 +84,7 @@ class AddComment extends Component {
 						<option value="5">5</option>
 					</Form.Control>
 				</Form.Group>
-				<Button className="brown my-2" type="submit">
+				<Button className="brown mt-3 mb-2" type="submit">
 					Submit
 				</Button>
 			</Form>

@@ -29,23 +29,23 @@ function AllBooks() {
 	return (
 		<>
 			<div className="section-toggles">
-				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("fantasy")}>
+				<button className="btn my-btn mx-3 mt-4 mb-2" onClick={() => toggleSection("fantasy")}>
 					Fantasy
 				</button>
 
-				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("history")}>
+				<button className="btn my-btn mx-3 mt-4 mb-2" onClick={() => toggleSection("history")}>
 					History
 				</button>
 
-				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("horror")}>
+				<button className="btn my-btn mx-3 mt-4 mb-2" onClick={() => toggleSection("horror")}>
 					Horror
 				</button>
 
-				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("romance")}>
+				<button className="btn my-btn mx-3 mt-4 mb-2" onClick={() => toggleSection("romance")}>
 					Romance
 				</button>
 
-				<button className="btn my-btn mx-2 mt-4 mb-2" onClick={() => toggleSection("scifi")}>
+				<button className="btn my-btn mx-3 mt-4 mb-2" onClick={() => toggleSection("scifi")}>
 					Sci-Fi
 				</button>
 			</div>

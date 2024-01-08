@@ -62,9 +62,10 @@ class BookList extends Component {
 								placeholder="Enter book title"
 								value={searchTerm}
 								onChange={(event) => this.handleChange(event)}
+								className="py-3"
 							/>
 						</Form>
-						<Row xs={1} md={2} lg={3} className="gap-4">
+						<Row xs={1} md={2} lg={3} className="gap-4 ms-2">
 							{displayedBooks.map((book) => (
 								<SingleBook
 									key={book.asin + book.category}

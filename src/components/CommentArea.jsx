@@ -91,18 +91,16 @@ class CommentArea extends Component {
 
 const CommentsList = ({ comments, onDelete }) => (
 	<ListGroup className="gap-1">
-		<h5 className="fw-bold">Comments</h5>
+		<h5 className="fw-bold text-center my-2">Comments</h5>
 		{comments.map((comment) => (
 			<ListGroup.Item
-				className="d-flex align-items-center justify-content-between rounded"
+				className="d-flex flex-column align-items-center justify-content-center rounded gap-2"
 				key={comment.elementId + comment.comment + comment.rate}
 			>
-				<div className="ms-2 me-auto">
-					<div className="fw-bold d-inline-block text-start">{comment.comment}</div>
-					<div className="fw-bold d-inline-block text-start">
-						{comment.rate >= 3 ? "⭐" : "✰"}
-						{comment.rate}
-					</div>
+				<div className="fw-bold text-center">{comment.comment}</div>
+				<div className="fw-bold text-center">
+					{comment.rate >= 3 ? "⭐" : "✰"}
+					{comment.rate}
 				</div>
 				<Button variant="outline-danger" size="sm" onClick={() => onDelete(comment._id)}>
 					Delete
